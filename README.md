@@ -11,7 +11,7 @@ From the two analysis deliverables it was found that:
 4.	The number of employees ready-for-retirement per department is as follow:
 ![](https://github.com/KatiuscaQ/Pewlett-Hackard-Analysis/blob/main/Resources/retiring_per_dept.PNG)
  
-That table was obtained with the following codes:
+That table was obtained by running the following query:
 ```html
 --Create a table combining departments and titles 
 SELECT DISTINCT ON (emp_no) ut.emp_no,
@@ -36,7 +36,7 @@ ORDER BY count DESC;
 ## Summary: 
 **How many roles will need to be filled as the "silver tsunami" begins to make an impact?**
 
-The roles that will need to be filled are a total of: 90,398. This number was found with the help of the following code: 
+The roles that will need to be filled are a total of: 90,398. This number was found with the help of the following query: 
 ```html
 SELECT SUM (count) FROM retiring_titles;
 ```
@@ -46,7 +46,7 @@ The roles that will need to be filled are:
  
 **Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?**
 
-There are 1,549 qualified employees that could be considered for the mentorship program. By running the following code, it is possible to see which titles and how many candidates per title could be consider:
+There are 1,549 qualified employees that could be considered for the mentorship program. By running the following query, it is possible to see which titles and how many candidates per title could be consider:
 ```html
 SELECT title,
 	    COUNT (*) 
@@ -54,7 +54,7 @@ FROM mentorship_eligibilty
 GROUP BY (title)
 ORDER BY count DESC;
 ```
-The following database is created from running that code: 
+The following table is created from running said query: 
 ![](https://github.com/KatiuscaQ/Pewlett-Hackard-Analysis/blob/main/Resources/mentorship_elegibility.PNG)
 
 Notice that in this table the title "Manager" is not fulfilled which means the mentor for the future generation in this position would have to be filled externally.
