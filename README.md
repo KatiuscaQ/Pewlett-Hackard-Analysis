@@ -55,6 +55,7 @@ GROUP BY (title)
 ORDER BY count DESC;
 ```
 The following table is created from running said query: 
+
 ![](https://github.com/KatiuscaQ/Pewlett-Hackard-Analysis/blob/main/Resources/mentorship_elegibility.PNG)
 
 Notice that in this table the title "Manager" is not fulfilled which means the mentor for the future generation in this position would have to be filled externally.
